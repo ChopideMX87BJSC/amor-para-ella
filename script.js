@@ -10,7 +10,7 @@ function actualizarContador(){
     const segundos = Math.floor((diferencia/1000)%60);
 
     document.getElementById("contador").innerHTML =
-    `Mi amor comenzó hace ❤️<br>
+    `Nuestra historia empezó hace 💖<br>
     ${dias} días ${horas} horas ${minutos} minutos ${segundos} segundos`;
 }
 
