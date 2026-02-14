@@ -1,18 +1,101 @@
-const inicio = new Date(2022,1,28);
-
-function actualizarContador(){
-    const ahora = new Date();
-    const diferencia = ahora - inicio;
-
-    const dias = Math.floor(diferencia/(1000*60*60*24));
-    const horas = Math.floor((diferencia/(1000*60*60))%24);
-    const minutos = Math.floor((diferencia/(1000*60))%60);
-    const segundos = Math.floor((diferencia/1000)%60);
-
-    document.getElementById("contador").innerHTML =
-    `Mi amor comenzó hace 💖<br>
-    ${dias} días ${horas} horas ${minutos} minutos ${segundos} segundos`;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
 }
 
-setInterval(actualizarContador,1000);
-actualizarContador();
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffd95e,#ffb6d9);
+    overflow:hidden;
+}
+
+/* tarjeta */
+.card{
+    width:400px;
+    background:white;
+    padding:35px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+    animation:entrada 1.2s ease;
+    z-index:2;
+}
+
+/* titulo */
+h1{
+    color:#ff2f6d;
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+/* mensaje */
+.mensaje{
+    font-size:22px;
+    color:#333;
+    margin-bottom:20px;
+    line-height:1.4;
+}
+
+/* corazón */
+.heart{
+    font-size:90px;
+    margin:20px 0;
+    animation:palpitar 1s infinite;
+}
+
+/* contador */
+#contador{
+    font-size:20px;
+    color:#ff2f6d;
+    font-weight:bold;
+}
+
+/* animación corazón */
+@keyframes palpitar{
+    0%{transform:scale(1);}
+    25%{transform:scale(1.2);}
+    50%{transform:scale(1);}
+    75%{transform:scale(1.15);}
+    100%{transform:scale(1);}
+}
+
+/* entrada suave */
+@keyframes entrada{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* 🌷 tulipanes animados */
+.tulipanes::before{
+    content:"🌷 🌷 🌷 🌷 🌷 🌷 🌷 🌷";
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:-100%;
+    left:0;
+    font-size:55px;
+    opacity:0.3;
+    animation:caerTulipanes 14s linear infinite;
+}
+
+@keyframes caerTulipanes{
+    0%{
+        top:-100%;
+        transform:translateX(0);
+    }
+    100%{
+        top:100%;
+        transform:translateX(60px);
+    }
+}
