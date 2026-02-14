@@ -11,37 +11,35 @@ body{
     justify-content:center;
     align-items:center;
     background:linear-gradient(135deg,#ffd95e,#ffb6d9);
-    overflow:hidden;
 }
 
-/* tarjeta */
+/* tarjeta romántica */
 .card{
-    width:400px;
+    width:420px;
     background:white;
     padding:35px;
     border-radius:30px;
     text-align:center;
-    box-shadow:0 20px 40px rgba(0,0,0,.25);
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
     animation:entrada 1.2s ease;
-    z-index:2;
 }
 
-/* titulo */
+/* título */
 h1{
     color:#ff2f6d;
-    font-size:35px;
+    font-size:34px;
     margin-bottom:15px;
 }
 
-/* mensaje */
+/* frase bonita */
 .mensaje{
     font-size:22px;
     color:#333;
+    line-height:1.5;
     margin-bottom:20px;
-    line-height:1.4;
 }
 
-/* corazón palpitando */
+/* corazón */
 .heart{
     font-size:90px;
     margin:20px 0;
@@ -68,47 +66,10 @@ h1{
 @keyframes entrada{
     from{
         opacity:0;
-        transform:translateY(50px);
+        transform:translateY(40px);
     }
     to{
         opacity:1;
         transform:translateY(0);
-    }
-}
-
-/* 🌷 TULIPANES */
-.tulipanes{
-    position:absolute;
-    width:100%;
-    height:100%;
-    pointer-events:none;
-    overflow:hidden;
-}
-
-.tulipanes span{
-    position:absolute;
-    font-size:45px;
-    opacity:0.35;
-    animation:caerTulipanes linear infinite;
-}
-
-/* posiciones */
-.tulipanes span:nth-child(1){left:5%; animation-duration:12s;}
-.tulipanes span:nth-child(2){left:15%; animation-duration:10s;}
-.tulipanes span:nth-child(3){left:25%; animation-duration:14s;}
-.tulipanes span:nth-child(4){left:35%; animation-duration:11s;}
-.tulipanes span:nth-child(5){left:45%; animation-duration:13s;}
-.tulipanes span:nth-child(6){left:55%; animation-duration:9s;}
-.tulipanes span:nth-child(7){left:65%; animation-duration:12s;}
-.tulipanes span:nth-child(8){left:75%; animation-duration:10s;}
-.tulipanes span:nth-child(9){left:85%; animation-duration:15s;}
-.tulipanes span:nth-child(10){left:95%; animation-duration:11s;}
-
-@keyframes caerTulipanes{
-    0%{
-        transform:translateY(-100px) rotate(0deg);
-    }
-    100%{
-        transform:translateY(100vh) rotate(360deg);
     }
 }
